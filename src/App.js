@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-
 import './App.css';
 import Tab from './Tab';
 import TodoModal from './components/TodoModal';
 import TodoAppBg from './images/bg.jpeg';
-
 //Fontawesome//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-
-
-
 function App() { 
   const[modalOpen,setModalOpen] = useState(false);
   return (
