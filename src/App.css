@@ -111,20 +111,20 @@ padding-right: 20px;
 
 .todo-item-desc {
   display: block;
-  width: 250px;
+  width: 220px;
   margin-left: 30px;
-  font-size: 15px;
+  font-size: 13px;
   color: #7b0000;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin-bottom:2px;
+  
 
 }
 .todo-item-time{
   font-size:10px;
-  margin-left: 180px;
-  color:#6c0909;
+  margin-left: 30px;
+  color:#360000;
 }
 .delete-btn{
   margin-right: 20px;

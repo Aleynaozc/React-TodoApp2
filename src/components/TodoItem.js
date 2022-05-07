@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import CheckedImg from './image/checked.jpg';
 //Fontawesome//
 import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import{faTrash} from '@fortawesome/free-solid-svg-icons';
+import{faPen, faTrash} from '@fortawesome/free-solid-svg-icons';
 function TodoItem({todo}) {
   return (
     <li className="todo-item">
@@ -14,15 +14,17 @@ function TodoItem({todo}) {
     
   </div>
   <div className="todo-item-details">
-    <span className={`todo-item-title ${todo.completed ? "completed": ""}`}>{todo.title}</span>
+    <span className={`todo-item-title ${todo.completed ? "completed": ""}`}>{todo.title} </span>
     <span className="todo-item-desc">{todo.description}</span>
-    <p className="todo-item-time">
-    {format(new Date(todo.time), 'p, MM/dd/yyyy')}
-    </p>
+    <span className="todo-item-time"> {format(new Date(todo.time), 'p, MM/dd/yyyy')}</span> 
   </div>
+  <button  className="delete-btn"type="button" >
+  <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>
+  </button>
   <button  className="delete-btn"type="button" >
   <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
   </button>
+  
 </li>
   )
 }
