@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './App.css';
 import Tab from './Tab';
+import TodoModal from './components/TodoModal';
 import TodoAppBg from './images/bg.jpeg';
 
 //Fontawesome//
@@ -11,6 +12,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 
 function App() { 
+  const[modelOpen,setModelOpen] = useState(true);
   return (
     <div className="App">
       <div className="container ">
@@ -31,6 +33,7 @@ function App() {
 
 
       </div>
+      <TodoModal modalOpen={modelOpen} setModelOpen={setModelOpen}/>
     </div>
   );
 }
