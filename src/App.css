@@ -397,3 +397,9 @@ button {
 .active-content {
   display: block;
 }
+.toaster-pos{
+  position: relative;
+  margin-top:390px;
+  background: #cfcfcf;
+  color: #fff;
+}
