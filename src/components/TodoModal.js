@@ -19,6 +19,7 @@ function TodoModal({ modalOpen, setModalOpen }) {
                 addTodo({
                 id:uuid(),//unique id üretiyor(uuid)
                 title,
+                complated:false,
                 description,
                 status,
                 time:new Date().toLocaleString(),

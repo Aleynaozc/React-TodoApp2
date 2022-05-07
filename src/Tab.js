@@ -25,6 +25,7 @@ function Tabs() {
         </button>
         <button
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+          
           onClick={() => toggleTab(3)}
         >
           Yearly
