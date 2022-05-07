@@ -399,7 +399,8 @@ button {
 }
 .toaster-pos{
   position: relative;
-  margin-top:390px;
-  background: #cfcfcf;
-  color: #fff;
+  margin-top:30px;
+  background:#dcc1a6!important;
+  color: #733131!important;
+  width:430px;
 }

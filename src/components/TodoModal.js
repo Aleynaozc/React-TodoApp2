@@ -25,7 +25,7 @@ function TodoModal({ modalOpen, setModalOpen }) {
             })
             );
             toast.success('Task Added Successfully'); //Alert
-        setModalOpen(false);
+            setModalOpen(false); //save tuşuna bastığında modalı kapatıcak.
         }else{
             toast.error("Title shouldn't be empty");
         }
