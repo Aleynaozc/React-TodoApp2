@@ -12,7 +12,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 
 function App() { 
-  const[modelOpen,setModelOpen] = useState(true);
+  const[modalOpen,setModalOpen] = useState(false);
   return (
     <div className="App">
       <div className="container ">
@@ -24,7 +24,7 @@ function App() {
            <Tab />
         </div> 
           
-        <button type="button"
+        <button type="button" onClick={() => setModalOpen(true)} //Buttona basıldığında modal açılıyor.
            className="open-modal-btn" 
           
           >
@@ -33,7 +33,7 @@ function App() {
 
 
       </div>
-      <TodoModal modalOpen={modelOpen} setModelOpen={setModelOpen}/>
+      <TodoModal modalOpen={modalOpen} setModalOpen={setModalOpen}/>
     </div>
   );
 }
