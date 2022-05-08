@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
  import { addTodo, updateTodo } from '../slices/todoSlice';
  import toast from 'react-hot-toast' //Alert 
 
-function TodoModal({ modalOpen, setModalOpen }) {
+function TodoModal({ type,modalOpen, setModalOpen }) {
     
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -13,28 +13,36 @@ function TodoModal({ modalOpen, setModalOpen }) {
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
+      
         e.preventDefault();
+        if(title === ''){
+            toast.error('Please enter a title.')
+            return;
+        }
         
-        if (title && description && status) {
-            dispatch(
+        
+        if (title  && status) { //If içine Description yazmıyoruz.Çünkü description boş kaydedilebilir.
+            dispatch //Burada State'i nasıl değiştiriceğimizi store'a bildiriyoruz.
+            ( 
                 addTodo({
                 id:uuid(),//unique id üretiyor(uuid)
                 title,
                 complated:false,
-                description,
+                description, // Kaydedilen note içinde description'nın gözükebilmesi için buraya description tanımlıyoruz.
                 status,
                 time:new Date().toLocaleString(),
             })
             );
             toast.success('Task Added Successfully'); //Alert
             setModalOpen(false); //save tuşuna bastığında modalı kapatıcak.
-        }else{
-            toast.error("Title shouldn't be empty");
+        }else if (title === '') //Title boş bırakılıp kaydedilmeye çalışıldığında alttaki uyarı çıkacak.
+        {
+            toast.error("Title shouldn't be empty"); 
         }
     };
     return (
 
-        modalOpen && ( //Eğer modalopen True ise modal göstericek False ise gösterilmicek.
+        modalOpen && ( //Eğer modalopen True ise modal göstericek , False ise gösterilmicek.
             <div id="todoFormModal" className="modal">
                 <div id="modalBody" className="modal-body">
                     <form>
@@ -58,7 +66,7 @@ function TodoModal({ modalOpen, setModalOpen }) {
                             type="text"
                             className="form-control input"
                             placeholder="Title"
-                            autocomplete="off"
+                            autoComplete="off"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                         />
@@ -76,7 +84,8 @@ function TodoModal({ modalOpen, setModalOpen }) {
                             className="save-btn"
                             type="submit"
                             >
-                            SAVE
+                                {type==='update' ? 'UPDATE' : 'SAVE'}
+                        
                         </button>
                     </form>
                 </div>

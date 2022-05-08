@@ -34,7 +34,7 @@ function App() {
             <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
           </button>
 
-          <TodoModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+          <TodoModal type="save" modalOpen={modalOpen} setModalOpen={setModalOpen} />
           <Toaster toastOptions={{
             // Define default options
             className: 'toaster-pos',

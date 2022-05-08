@@ -13,17 +13,17 @@ import TodoModal from './TodoModal';
 
 function TodoItem({todo}) {
 
-  const dispatch=useDispatch();
+  const dispatch=useDispatch(); //todoSlice'daki actionları çalıştırmak için kullanılır.
 
-  const[modalOpen,setModalOpen]=useState(false);
+  const[UpdateModalOpen,setUpdateModalOpen]=useState(false);
 
   const handlerDelete=()=>{
-    dispatch(deleteTodo(todo.id));//Storage'den çekiyoruz.
+    dispatch(deleteTodo(todo.id));//todoSlice'da yaratılan action'ı kullanıp silme işlemini yapıyoruz.
     toast.success('Todo Deleted Successfully')
   }
 
   const handlerUpdate=()=>{
-    setModalOpen(true);
+    setUpdateModalOpen(true);
   }
   return (
     <>
@@ -47,7 +47,7 @@ function TodoItem({todo}) {
   </button>
   
 </div>
-<TodoModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+<TodoModal modalOpen={UpdateModalOpen} setModalOpen={setUpdateModalOpen} />
 </>
   )
 }
