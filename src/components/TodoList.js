@@ -12,8 +12,9 @@ function TodoListContainer() {
         todo={todo} 
         key={todo.id}/>) 
         
-        : 'no todo found'
+        : ' ~Add New Todo~'
     }
+    
     
     </ul>;
 
