@@ -1,4 +1,4 @@
-import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
+
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
  import {v4 as uuid} from 'uuid'
@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
  import toast from 'react-hot-toast' //Alert 
 
 function TodoModal({ modalOpen, setModalOpen }) {
+    
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [status, setStatus] = useState('daily');
@@ -57,6 +58,7 @@ function TodoModal({ modalOpen, setModalOpen }) {
                             type="text"
                             className="form-control input"
                             placeholder="Title"
+                            autocomplete="off"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                         />

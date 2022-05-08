@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { format } from 'date-fns';
 //IMAGE//
 import CheckedImg from './image/checked.jpg';
@@ -8,17 +8,27 @@ import{faPen, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../slices/todoSlice';
 import toast from 'react-hot-toast';
+import TodoModal from './TodoModal';
+
+
 function TodoItem({todo}) {
+
   const dispatch=useDispatch();
+
+  const[modalOpen,setModalOpen]=useState(false);
+
   const handlerDelete=()=>{
     dispatch(deleteTodo(todo.id));//Storage'den çekiyoruz.
     toast.success('Todo Deleted Successfully')
   }
+
   const handlerUpdate=()=>{
-    console.log("Updating")
+    setModalOpen(true);
   }
   return (
-    <li className="todo-item">
+    <>
+ 
+    <div className="todo-item">
   <div className={`todo-item-check ${todo.completed ? " complete-item-check  ": ""}`}>
     
     <img src={CheckedImg} />
@@ -36,7 +46,9 @@ function TodoItem({todo}) {
   <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
   </button>
   
-</li>
+</div>
+<TodoModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+</>
   )
 }
 
