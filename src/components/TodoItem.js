@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { format } from 'date-fns';
-//IMAGE//
-import CheckedImg from './image/checked.jpg';
+
 //Fontawesome//
 import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import{faPen, faTrash} from '@fortawesome/free-solid-svg-icons';
@@ -9,29 +8,38 @@ import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../slices/todoSlice';
 import toast from 'react-hot-toast';
 import TodoModal from './TodoModal';
+import CheckButton from './CheckButton';
 
 
 function TodoItem({todo}) {
 
   const dispatch=useDispatch(); //todoSlice'daki actionları çalıştırmak için kullanılır.
-
+const[period,setPeriod]=useState(false);
   const[UpdateModalOpen,setUpdateModalOpen]=useState(false);
 
+  useEffect(()=>{
+    if(todo.status === 'daily'){
+      setPeriod(true);
+    }else {
+      setPeriod(false);
+    }
+  },[todo.status])
   const handlerDelete=()=>{
     dispatch(deleteTodo(todo.id));//todoSlice'da yaratılan action'ı kullanıp silme işlemini yapıyoruz.
     toast.success('Todo Deleted Successfully')
   }
 
-  const handlerUpdate=()=>{
+  const handlerUpdate=()=>
+  {
     setUpdateModalOpen(true);
   }
   return (
     <>
  
     <div className="todo-item">
-  <div className={`todo-item-check ${todo.completed ? " complete-item-check  ": ""}`}>
+  <div className="todo-item-check">
+    <CheckButton/>
     
-    <img src={CheckedImg} />
     
   </div>
   <div className="todo-item-details">
@@ -47,7 +55,12 @@ function TodoItem({todo}) {
   </button>
   
 </div>
-<TodoModal modalOpen={UpdateModalOpen} setModalOpen={setUpdateModalOpen} />
+<TodoModal 
+type='update' 
+modalOpen={UpdateModalOpen} 
+setModalOpen={setUpdateModalOpen}
+todo={todo} //Update ederken title desc ve status de eski bilgileri görebilmek için yazıyoruz.
+/>
 </>
   )
 }

@@ -48,7 +48,7 @@ export const todoSlice = createSlice( //Burada Yapılacak Actionlar yaratılıyo
             if (todoList) {
                 const todoListArr = JSON.parse(todoList);//Js biçimine dönüştü ve TodoListArr'e atandı.
                 todoListArr.forEach((todo, index) => {
-                    if (todo.id === action.payload) //Todo id ile payload id eşleşirse;
+                    if (todo.id === action.payload) //Todo id ile payload propları eşitlenirse;
                      {
                         todoListArr.splice(index, 1); // İndexten ne kadar çıkarmak istiyorsak onu belirtiyoruz.
                     }
@@ -63,10 +63,12 @@ export const todoSlice = createSlice( //Burada Yapılacak Actionlar yaratılıyo
             const todoList = window.localStorage.getItem('todoList') //burada TodoList öğesini aldık.
                 ;
             if (todoList) {
-                const todoListArr = JSON.parse(todoList);
+                const todoListArr = JSON.parse(todoList);//stringden object'e çevirdik.
 
                 todoListArr.forEach((todo, index) => {
-                    if (todo.id === action.payload.id) //Todo id ile payload id eşleşirse;
+                 //payload 'da title description vs propları olduğu için eşitleyeceğimiz özelliği(id)'yi belirtmemiz gerekiyor.
+                    if (todo.id === action.payload.id) 
+                    //Todo id ile payload id eşleşirse;
                     { //Update edilecek propertiesleri tanımlıyoruz.
                         todo.status = action.payload.status; 
                         todo.title = action.payload.title;
