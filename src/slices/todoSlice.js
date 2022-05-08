@@ -13,7 +13,8 @@ const getInitialTodo = () => {
 };
 
 const initialValue = {
-    todoList: getInitialTodo()
+    filterStatus:'daily',
+    todoList: getInitialTodo(),
 };
 
 export const todoSlice = createSlice( //Burada Yapılacak Actionlar yaratılıyor.(Delete,Update vs.)
@@ -81,9 +82,24 @@ export const todoSlice = createSlice( //Burada Yapılacak Actionlar yaratılıyo
                    
                  state.todoList= todoListArr; //state'i  update ediyoruz.
             }
-        }
+        },
+        updateFilterStatus:(state,action) =>{
+            state.filterStatus=action.payload;
+        },
+
+       setCheck:(state,action)=>{
+           state.todoList.map(item=>{
+               if(action.payload==item.id){
+                   if(item.completed===true ){
+                      item.completed=false
+                   }else{
+                       item.completed=true
+                   }
+               }
+           })
+       }
     },
 
 });
-export const { addTodo, deleteTodo,updateTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo,updateTodo,updateFilterStatus,setCheck } = todoSlice.actions;
 export default todoSlice.reducer;

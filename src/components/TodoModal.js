@@ -1,73 +1,74 @@
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
- import {v4 as uuid} from 'uuid'
- import { addTodo, updateTodo } from '../slices/todoSlice';
- import toast from 'react-hot-toast' //Alert 
+import { v4 as uuid } from 'uuid'
+import { addTodo, updateTodo } from '../slices/todoSlice';
+import toast from 'react-hot-toast' //Alert 
 
-function TodoModal({ type,modalOpen, setModalOpen,todo }) {
-    
+function TodoModal({ type, modalOpen, setModalOpen, todo }) {
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [status, setStatus] = useState('daily');
     const dispatch = useDispatch()
 
-useEffect(()=>{
-    if(type === 'update' && todo){
-        setTitle(todo.title);
-        setDescription(todo.description);
-        setStatus(todo.status);
-    }else{
-        setTitle('');
-        setDescription('');
-        setStatus('daily');
-    }
-},[type,todo,modalOpen]);
+    useEffect(() => {
+        if (type === 'update' && todo) {
+            setTitle(todo.title);
+            setDescription(todo.description);
+            setStatus(todo.status);
+        } else {
+            setTitle('');
+            setDescription('');
+            setStatus('daily');
+        }
+    }, [type, todo, modalOpen]);
 
 
     const handleSubmit = (e) => {
-      
+
         e.preventDefault();
-        if(title === ''){
+        if (title === '') {
             toast.error('Please enter a title.')
             return;
         }
-        
-        
-        if (title  && status) //If içine Description yazmıyoruz.Çünkü description boş kaydedilebilir.
-        { 
-            if( type=== 'save'){
-            dispatch //Burada State'i nasıl değiştiriceğimizi store'a bildiriyoruz.
-            ( 
-                addTodo({
-                id:uuid(),//unique id üretiyor(uuid)
-                title,
-                complated:false,
-                description, // Kaydedilen note içinde description'nın gözükebilmesi için buraya description tanımlıyoruz.
-                status,
-                time:new Date().toLocaleString(),
-            })
-            );
-            toast.success('Task Added Successfully'); //Alert
-            setModalOpen(false); //save tuşuna bastığında modalı kapatıcak.
-        }
-        
-        if (type === 'update') {
-            if (todo.title !== title || todo.description !== description|| todo.status !== status) {
-              dispatch(updateTodo({ 
-                  ...todo,   //Eski todo'yu alarak eski proplar (title,desc,status) bilgilerinin üzerine yeni prop bilgilerini yazar.
-                  title, 
-                  description,
-                  status })); 
-              toast.success('Task Updated successfully');
-            } else {
-              toast.error('No changes made');
-              return;
+
+
+        if (title && status) //If içine Description yazmıyoruz.Çünkü description boş kaydedilebilir.
+        {
+            if (type === 'save') {
+                dispatch //Burada State'i nasıl değiştiriceğimizi store'a bildiriyoruz.
+                    (
+                        addTodo({
+                            id: uuid(),//unique id üretiyor(uuid)
+                            title,
+                            completed: false,
+                            description, // Kaydedilen note içinde description'nın gözükebilmesi için buraya description tanımlıyoruz.
+                            status,
+                            time: new Date().toLocaleString(),
+                        })
+                    );
+                toast.success('Task Added Successfully'); //Alert
+                setModalOpen(false); //save tuşuna bastığında modalı kapatıcak.
             }
-          }
-          setModalOpen(false);
-    }
-       
+
+            if (type === 'update') {
+                if (todo.title !== title || todo.description !== description || todo.status !== status) {
+                    dispatch(updateTodo({
+                        ...todo,   //Eski todo'yu alarak eski propların (title,desc,status) bilgilerinin üzerine yeni prop bilgilerini yazar.
+                        title,
+                        description,
+                        status
+                    }));
+                    toast.success('Task Updated successfully');
+                } else {
+                    toast.error('No changes made');
+                    return;
+                }
+            }
+            setModalOpen(false);
+        }
+
     };
     return (
 
@@ -112,9 +113,9 @@ useEffect(()=>{
                         <button
                             className="save-btn"
                             type="submit"
-                            >
-                                {type==='update' ? 'UPDATE' : 'SAVE'}
-                        
+                        >
+                            {type === 'update' ? 'UPDATE' : 'SAVE'}
+
                         </button>
                     </form>
                 </div>
