@@ -1,3 +1,26 @@
+                                                          #TODOAPP (USING REACT)
+                                                          
+
+<img width="1077" alt="1" src="https://user-images.githubusercontent.com/97678679/167505383-1c91a1ad-2e80-4c6f-a324-8d549d427ae4.png">
+
+
+//Save Modal
+<img width="1080" alt="2" src="https://user-images.githubusercontent.com/97678679/167505390-5bcae125-7a0e-4c7a-9282-e184ebd0f332.png">
+
+//When the checkbox is clicked, the title style changes to 'line-through'
+<img width="1080" alt="3" src="https://user-images.githubusercontent.com/97678679/167505399-a0c119b4-00b0-448c-a0c2-7b5ee834c6da.png">
+
+// Weekly Tab
+<img width="1080" alt="4" src="https://user-images.githubusercontent.com/97678679/167505403-32ce6cd8-ee51-40f4-915b-420d7380cf3b.png">
+
+// Weekly tab (Text overflow)
+<img width="1079" alt="5" src="https://user-images.githubusercontent.com/97678679/167505410-5d2c9371-3f8f-4ab3-b2d0-149095dc8e9f.png">
+
+//Update Modal (I'm trying fix the update modal.)
+<img width="1080" alt="6" src="https://user-images.githubusercontent.com/97678679/167505420-1099a33e-aba3-42dc-9de3-b1a594bf4865.png">
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
