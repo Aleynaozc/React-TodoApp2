@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { format } from 'date-fns';
-import CheckedImg from './image/checked.jpg';
+
 //Fontawesome//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -19,22 +19,12 @@ function TodoItem({ todo }) {
   const handlerUpdate = () => {
     setUpdateModalOpen(true);
   }
-  const handlerCheck = () => {
-    // dispatch(setCheck(id))
-    (todo.map(item => {
-      if (item.id === todo.id) {
-        return {
-          ...item, completed: !item.completed
-        }
-      }
-      return item;
-    }));
-  }
+  
 
   return (
     <>
       <li className="todo-item">
-        <div >
+        <div>
           <input className="todo-item-check" type='checkbox' />
         </div>
         <div className="todo-item-details">

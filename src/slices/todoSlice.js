@@ -88,17 +88,7 @@ export const todoSlice = createSlice( //Burada Yapılacak Actionlar yaratılıyo
                 state.filterStatus = action.payload;
             },
 
-            setCheck: (state, action) => {
-                state.todoList.map(item => {
-                    if (action.payload == item.id) {
-                        if (item.completed == true) {
-                            item.completed = false
-                        } else {
-                            item.completed = true
-                        }
-                    }
-                })
-            }
+            
         },
 
     });

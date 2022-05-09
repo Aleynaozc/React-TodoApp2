@@ -5,11 +5,12 @@ import { v4 as uuid } from 'uuid'
 import { addTodo, updateTodo } from '../slices/todoSlice';
 import toast from 'react-hot-toast' //Alert 
 
-function TodoModal({ type, modalOpen, setModalOpen, todo }) {
 
+function TodoModal({ type, modalOpen, setModalOpen, todo }) {
+    
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [status, setStatus] = useState('daily');
+    const [status, setStatus] = useState('');
     const dispatch = useDispatch()
 
     useEffect(() => {

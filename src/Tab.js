@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import { updateFilterStatus, updateTodo } from "./slices/todoSlice";
-import TodoListContainer from './components/TodoList';
+import { updateFilterStatus } from "./slices/todoSlice";
+
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
   const filterStatus = useSelector(state => state.todo.filterStatus);
@@ -10,7 +10,6 @@ function Tabs() {
   const dispatch = useDispatch();
 
   const updateFilter = (e) => {
-    console.log(e.target.value);
     dispatch(updateFilterStatus(e.target.value))
   }
   const toggleTab = (index) => {
@@ -47,8 +46,6 @@ function Tabs() {
         <div
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          <TodoListContainer
-          />
 
         </div>
 

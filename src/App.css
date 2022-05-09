@@ -125,8 +125,6 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
-
 }
 
 .todo-item-time {
@@ -161,7 +159,13 @@ body {
 .fa-pen {
   cursor: pointer;
   font-size: 15px;
-  color: #6b1b1b;
+  color:#bd6b6b;
+}
+.edit-btn{
+  position: absolute;
+  top:328px;
+  left:310px;
+  
 }
 
 input {
@@ -347,11 +351,6 @@ input:focus-visible {
 
 }
 
-
-
-
-
-
 .bloc-tabs {
   display: flex;
 }
@@ -442,3 +441,8 @@ button {
   color: #733131 !important;
   width: 430px;
 }
+
+input[type='checkbox'] {
+  accent-color:  #892727;
+}
+
