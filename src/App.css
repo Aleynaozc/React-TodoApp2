@@ -451,3 +451,8 @@ color:#9a0505;
 .fa-xmark{
   font-size: 20px;
 }
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

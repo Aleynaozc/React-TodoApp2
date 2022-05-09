@@ -11,7 +11,13 @@ import TodoModal from './TodoModal';
 function TodoItem({ todo }) {
   const dispatch = useDispatch(); //todoSlice'daki actionları çalıştırmak için kullanılır.
   const [UpdateModalOpen, setUpdateModalOpen] = useState(false);
-
+  
+  const [checked, setChecked] = useState(false); 
+  const checkedText = () => { 
+    
+    setChecked(!checked); 
+    
+  }; 
   const handlerDelete = () => {
     dispatch(deleteTodo(todo.id));//todoSlice'da yaratılan action'ı kullanıp silme işlemini yapıyoruz.
     toast.success('Todo Deleted Successfully')
@@ -25,10 +31,10 @@ function TodoItem({ todo }) {
     <>
       <li className="todo-item">
         <div>
-          <input className="todo-item-check" type='checkbox' />
+          <input className="todo-item-check" type='checkbox' onChange={checkedText} />
         </div>
         <div className="todo-item-details">
-          <span className="todo-item-title ">{todo.title} </span>
+          <span className={`todo-item-title ${checked? "completed": ""}`} >{todo.title} </span>
           <span className="todo-item-desc">{todo.description}</span>
           <p className="todo-item-time"> {format(new Date(todo.time), 'p, MM/dd/yyyy')}</p>
         </div>
