@@ -13,7 +13,8 @@ function TodoItem({ todo }) {
   const [UpdateModalOpen, setUpdateModalOpen] = useState(false);
   
   const [checked, setChecked] = useState(false); 
-  const checkedText = () => { 
+  
+  const checkedText = () => { //Checkbox tıklandığında title'ın üstü çizilir.
     
     setChecked(!checked); 
     
