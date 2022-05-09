@@ -30,7 +30,7 @@ function TodoItem({ todo }) {
         <div className="todo-item-details">
           <span className="todo-item-title ">{todo.title} </span>
           <span className="todo-item-desc">{todo.description}</span>
-          <span className="todo-item-time"> {format(new Date(todo.time), 'p, MM/dd/yyyy')}</span>
+          <p className="todo-item-time"> {format(new Date(todo.time), 'p, MM/dd/yyyy')}</p>
         </div>
         <button className="delete-btn" type="button" onClick={handlerUpdate}>
           <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>

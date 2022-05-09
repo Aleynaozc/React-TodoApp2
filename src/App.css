@@ -75,8 +75,8 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 18px;
-  height: 55px;
-  justify-content: space-around;
+  height:76px;
+ 
   align-items: center;
   background-image: linear-gradient(to right, rgba(254, 255, 255, 0.731), #f0e6dd);
   border-radius: 14px;
@@ -128,9 +128,10 @@ body {
 }
 
 .todo-item-time {
-  font-size: 10px;
   margin-left: 30px;
+  margin-top: 3px;
   color: #360000;
+  font-size: 10px;
 }
 
 .null-todo-title {
