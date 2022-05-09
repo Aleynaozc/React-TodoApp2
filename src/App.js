@@ -9,21 +9,11 @@ import { Toaster } from 'react-hot-toast';
 import TodoAppBg from './images/bg.jpeg';
 //Fontawesome//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus} from '@fortawesome/free-solid-svg-icons'
-import todo from './components/TodoModal'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 function App() {
-  
   const [modalOpen, setModalOpen] = useState(false);
- 
-  const [UpdateModalOpen, setUpdateModalOpen] = useState(false);
-
-  const handlerUpdate = () => {
-    setUpdateModalOpen(true);
-
-    
-  }
-
   return (
     <>
       <div className="App">
@@ -35,16 +25,13 @@ function App() {
           <div className='buttons' >
             <Tab />
           </div>
-
-          <TodoListContainer handlerUpdate={handlerUpdate}
+          <TodoListContainer
           />
           <button type="button" onClick={() => setModalOpen(true)} //Buttona basıldığında modal açılıyor.
             className="open-modal-btn"
-
           >
             <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
           </button>
-
           <TodoModal type="save" modalOpen={modalOpen} setModalOpen={setModalOpen} />
           <Toaster toastOptions={{
             // Define default options
@@ -53,14 +40,8 @@ function App() {
         </div>
 
       </div>
-      <TodoModal
-        type='update'
-        modalOpen={UpdateModalOpen}
-        setModalOpen={setUpdateModalOpen}
-        todo={todo} //Update ederken title desc ve status de eski bilgileri görebilmek için yazıyoruz.
-      />
+
     </>
   );
 }
-
 export default App;

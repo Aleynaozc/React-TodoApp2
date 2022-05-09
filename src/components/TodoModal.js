@@ -4,14 +4,12 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid'
 import { addTodo, updateTodo } from '../slices/todoSlice';
 import toast from 'react-hot-toast' //Alert 
-import {  faXmark } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function TodoModal({ type, modalOpen, setModalOpen, todo }) {
-   
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [status, setStatus] = useState('');
+    const [status, setStatus] = useState('daily');
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -69,7 +67,6 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
                 }
             }
             setModalOpen(false);
-           
         }
 
     };
@@ -77,13 +74,8 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
 
         modalOpen && ( //Eğer modalopen True ise modal göstericek , False ise gösterilmicek.
             <div id="todoFormModal" className="modal">
-                  
                 <div id="modalBody" className="modal-body">
-                <button className='close-btn' type="button" onClick={() => setModalOpen(false)}>
-                        <FontAwesomeIcon icon={faXmark} />
-                        </button>
                     <form>
-                       
                         <div className="select">
                             <select
                                 name="todos"
@@ -98,7 +90,6 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
                         </div>
                     </form>
                     <form id="todoForm" onSubmit={(e) => handleSubmit(e)}>
-                   
                         <input id="id" hidden />
                         <input
                             name="title"
@@ -127,7 +118,6 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
 
                         </button>
                     </form>
-                  
                 </div>
             </div>
         )
