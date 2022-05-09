@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { updateFilterStatus, updateTodo } from "./slices/todoSlice";
-
+import TodoListContainer from './components/TodoList';
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
   const filterStatus = useSelector(state => state.todo.filterStatus);
@@ -10,16 +10,17 @@ function Tabs() {
   const dispatch = useDispatch();
 
   const updateFilter = (e) => {
-
+    console.log(e.target.value);
     dispatch(updateFilterStatus(e.target.value))
   }
   const toggleTab = (index) => {
     setToggleState(index);
+
   };
 
   return (
     <div className="container-tab">
-      <div className="bloc-tabs" value={filterStatus} onChange={updateFilter}>
+      <div className="bloc-tabs" value={filterStatus} onClick={updateFilter}>
         <button
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)} value='daily'
@@ -42,9 +43,12 @@ function Tabs() {
       </div>
 
       <div className="content-tabs">
+
         <div
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
+          <TodoListContainer
+          />
 
         </div>
 

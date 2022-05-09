@@ -11,10 +11,10 @@ function TodoListContainer() {
 
     const filteredTodoList = sortedTodoList.filter(item => {
 
-        if (item.status === filterStatus) {
+        if (item.status == filterStatus) {
             return true;
         }
-        return item.status === filterStatus;
+        return item.status == filterStatus;
     })
 
 

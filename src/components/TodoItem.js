@@ -11,6 +11,7 @@ import TodoModal from './TodoModal';
 function TodoItem({ todo }) {
   const dispatch = useDispatch(); //todoSlice'daki actionları çalıştırmak için kullanılır.
   const [UpdateModalOpen, setUpdateModalOpen] = useState(false);
+
   const handlerDelete = () => {
     dispatch(deleteTodo(todo.id));//todoSlice'da yaratılan action'ı kullanıp silme işlemini yapıyoruz.
     toast.success('Todo Deleted Successfully')
@@ -32,7 +33,7 @@ function TodoItem({ todo }) {
 
   return (
     <>
-      <div className="todo-item">
+      <li className="todo-item">
         <div >
           <input className="todo-item-check" type='checkbox' />
         </div>
@@ -47,7 +48,7 @@ function TodoItem({ todo }) {
         <button className="delete-btn" type="button" onClick={handlerDelete}>
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
         </button>
-      </div>
+      </li>
       <TodoModal
         type='update'
         modalOpen={UpdateModalOpen}
