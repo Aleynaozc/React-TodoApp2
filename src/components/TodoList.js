@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 
 
-function TodoListContainer() {
+function TodoListContainer({ handlerUpdate }) {
     const filterStatus = useSelector((state) => state.todo.filterStatus);
     const todoList = useSelector((state) => state.todo.todoList);
     const sortedTodoList = [...todoList];
@@ -21,13 +21,13 @@ function TodoListContainer() {
 
     return <ul id="todoItems" className="todos">
         {filteredTodoList && filteredTodoList.length > 0
-            ? filteredTodoList.map((todo) => 
-            <TodoItem
-                todo={todo}
-                key={todo.id}
-                completed={todo.completed}
-
-            />)
+            ? filteredTodoList.map((todo) =>
+                <TodoItem
+                    todo={todo}
+                    key={todo.id}
+                    completed={todo.completed}
+                    handlerUpdate={handlerUpdate}
+                />)
 
             : ' ~Add New Todo~'
         }

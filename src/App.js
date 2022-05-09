@@ -9,11 +9,21 @@ import { Toaster } from 'react-hot-toast';
 import TodoAppBg from './images/bg.jpeg';
 //Fontawesome//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-
+import { faPlus} from '@fortawesome/free-solid-svg-icons'
+import todo from './components/TodoModal'
 
 function App() {
+  
   const [modalOpen, setModalOpen] = useState(false);
+ 
+  const [UpdateModalOpen, setUpdateModalOpen] = useState(false);
+
+  const handlerUpdate = () => {
+    setUpdateModalOpen(true);
+
+    
+  }
+
   return (
     <>
       <div className="App">
@@ -25,7 +35,8 @@ function App() {
           <div className='buttons' >
             <Tab />
           </div>
-          <TodoListContainer
+
+          <TodoListContainer handlerUpdate={handlerUpdate}
           />
           <button type="button" onClick={() => setModalOpen(true)} //Buttona basıldığında modal açılıyor.
             className="open-modal-btn"
@@ -42,7 +53,12 @@ function App() {
         </div>
 
       </div>
-
+      <TodoModal
+        type='update'
+        modalOpen={UpdateModalOpen}
+        setModalOpen={setUpdateModalOpen}
+        todo={todo} //Update ederken title desc ve status de eski bilgileri görebilmek için yazıyoruz.
+      />
     </>
   );
 }
