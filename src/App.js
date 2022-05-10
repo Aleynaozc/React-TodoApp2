@@ -19,7 +19,7 @@ function App() {
       <div className="App">
         <div className="container ">
           <div className="header">
-            <img src="/image/bg.jpeg" />
+            <img src="/image/bg.jpeg"  alt="header-background"  />
             <span className="title">TODO APP</span>
           </div>
           <div className='buttons' >
