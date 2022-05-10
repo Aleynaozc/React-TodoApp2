@@ -74,7 +74,7 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
     return (
 
         modalOpen && ( //Eğer modalopen True ise modal göstericek , False ise gösterilmicek.
-            <div id="todoFormModal" className="modal">
+            <div id="todoFormModal" className={`modal ${type==='update' ? "modal-update": ""}`}>
                 <div id="modalBody" className="modal-body">
                 <button className='close-btn' type="button" onClick={() => setModalOpen(false)}>
                 <FontAwesomeIcon icon={faXmark} />

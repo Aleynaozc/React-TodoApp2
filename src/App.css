@@ -192,6 +192,7 @@ input:focus-visible {
   border-radius: var(--corner);
   animation-duration: 1s;
   animation-name: openModal;
+ 
 }
 @keyframes openModal {
   from {
@@ -307,6 +308,9 @@ input:focus-visible {
   bottom: 10px;
   margin-left: 170px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.close-modal-btn{
+  display:none;
 }
 
 .fa-plus {
@@ -453,4 +457,24 @@ color:#9a0505;
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+}
+.modal-update{
+  position: fixed;
+  width: inherit;
+  height: 780px;
+  top:28px;
+  background-color: #00000030;
+  border-radius: var(--corner);
+  animation-duration: 1s;
+  animation-name: openUpdateModal;
+  
+}
+@keyframes openUpdateModal {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 92%;
+  }
 }
