@@ -17,7 +17,7 @@ function TodoItem({ todo }) {
   const checkedText = () => { //Checkbox tıklandığında title'ın üstü çizilir.
     
     setChecked(!checked); 
-    
+    setUpdateModalOpen(false);
   }; 
   const handlerDelete = () => {
     dispatch(deleteTodo(todo.id));//todoSlice'da yaratılan action'ı kullanıp silme işlemini yapıyoruz.

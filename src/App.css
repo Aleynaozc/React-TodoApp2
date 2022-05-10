@@ -180,12 +180,19 @@ input:focus-visible {
   outline: none;
 }
 
-.modal.show {
-  display: block;
+
+
+
+
+.modal {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  background-color: #00000030;
+  border-radius: var(--corner);
   animation-duration: 1s;
   animation-name: openModal;
 }
-
 @keyframes openModal {
   from {
     height: 0;
@@ -195,15 +202,6 @@ input:focus-visible {
     height: 100%;
   }
 }
-
-.modal {
-  position: relative;
-  width: inherit;
-  height: inherit;
-  background-color: #00000030;
-  border-radius: var(--corner);
-}
-
 .modal-body {
   display: flex;
   flex-direction: column;
