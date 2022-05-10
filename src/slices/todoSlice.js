@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const getInitialTodo = () => {
-    const localTodoList = window.localStorage.
-        getItem('todoList');
+    const localTodoList = window.localStorage.getItem('todoList');
     if (localTodoList) {
         return JSON.parse(localTodoList) //JS biçimine dönüştürme
     }

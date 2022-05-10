@@ -9,10 +9,10 @@ function TodoListContainer() {
     const sortedTodoList = [...todoList];
     sortedTodoList.sort((a, b) => new Date(b.time) - new Date(a.time));
     const filteredTodoList = sortedTodoList.filter(item => {
-        if (item.status == filterStatus) {
+        if (item.status === filterStatus) {
             return true;
         }
-        return item.status == filterStatus;
+        return item.status === filterStatus;
     })
 
     return <ul id="todoItems" className="todos">
