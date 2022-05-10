@@ -9,7 +9,7 @@ import { Toaster } from 'react-hot-toast';
 import TodoAppBg from './images/bg.jpeg';
 //Fontawesome//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           <button type="button" onClick={() => setModalOpen(true)} //Buttona basıldığında modal açılıyor.
             className="open-modal-btn"
           >
-            <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+           <FontAwesomeIcon icon={faPenToSquare} />
           </button>
           <TodoModal type="save" modalOpen={modalOpen} setModalOpen={setModalOpen} />
           <Toaster toastOptions={{

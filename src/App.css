@@ -60,7 +60,7 @@ body {
 .todos {
   position: absolute;
   width: inherit;
-  margin-top: 290px;
+  margin-top: 310px;
   padding-left: 0;
   height: 550px;
   max-height: 440px;
@@ -278,6 +278,7 @@ input:focus-visible {
 .save-btn {
   position: absolute;
   cursor: pointer;
+  
   left: 120px;
   bottom: 20px;
   width: 25%;
@@ -300,14 +301,20 @@ input:focus-visible {
   border: none;
   display: flex;
   justify-content: center;
-  background-color: #7b0000;
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
+  background-color: #b15f4d;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
   position: absolute;
-  bottom: 10px;
-  margin-left: 170px;
+  cursor: pointer;
+  top:213px;
+  left: 320px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.fa-pen-to-square{
+  margin-top: 6px;
+  font-size: 20px;
+  color:#f9e8dc;
 }
 .close-modal-btn{
   display:none;
@@ -343,6 +350,7 @@ input:focus-visible {
   border: 1px solid rgba(238, 238, 238, 0.274);
   border-bottom: none;
   border-radius: 20px;
+  top:20px;
 
 
 }
@@ -428,6 +436,7 @@ button {
 
 .active-content {
   display: block;
+  border-radius: 20px;
 }
 
 .toaster-pos {
