@@ -1,25 +1,27 @@
                                                           #TODOAPP (USING REACT)
                                                           
 
-<img width="1077" alt="1" src="https://user-images.githubusercontent.com/97678679/167505383-1c91a1ad-2e80-4c6f-a324-8d549d427ae4.png">
+
+<img width="1078" alt="1" src="https://user-images.githubusercontent.com/97678679/167652340-2fee4ff3-ba8a-4cb5-a9c2-d3694a0b85fb.png">
 
 
 //Save Modal
-<img width="1080" alt="2" src="https://user-images.githubusercontent.com/97678679/167505390-5bcae125-7a0e-4c7a-9282-e184ebd0f332.png">
 
-//When the checkbox is clicked, the title style changes to 'line-through'
-<img width="1080" alt="3" src="https://user-images.githubusercontent.com/97678679/167505399-a0c119b4-00b0-448c-a0c2-7b5ee834c6da.png">
+<img width="1080" alt="2" src="https://user-images.githubusercontent.com/97678679/167652368-2a54743f-b1bd-4a88-9167-d521dcc915b7.png">
 
-// Weekly Tab
-<img width="1080" alt="4" src="https://user-images.githubusercontent.com/97678679/167505403-32ce6cd8-ee51-40f4-915b-420d7380cf3b.png">
+//Added Task
 
-// Weekly tab (Text overflow)
-<img width="1079" alt="5" src="https://user-images.githubusercontent.com/97678679/167505410-5d2c9371-3f8f-4ab3-b2d0-149095dc8e9f.png">
+<img width="1080" alt="3" src="https://user-images.githubusercontent.com/97678679/167652486-6a59320d-e1a4-46f3-8373-18f25674f40d.png">
 
-//Update Modal (I'm trying fix the update modal.)
-<img width="1080" alt="6" src="https://user-images.githubusercontent.com/97678679/167505420-1099a33e-aba3-42dc-9de3-b1a594bf4865.png">
+// Weekly Tab // When the checkbox is clicked, the title style changes to 'line-through' 
 
 
+<img width="1078" alt="4" src="https://user-images.githubusercontent.com/97678679/167652691-ae775fed-ac39-441c-96cd-3b9929d572f0.png">
+
+//Update Modal 
+
+
+<img width="1080" alt="5" src="https://user-images.githubusercontent.com/97678679/167653287-8021ce75-71de-4ab2-81f9-0725c4cfb52c.png">
 
 # Getting Started with Create React App
 
