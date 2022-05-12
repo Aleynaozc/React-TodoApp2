@@ -91,5 +91,5 @@ export const todoSlice = createSlice( //Burada Yapılacak Actionlar yaratılıyo
         },
 
     });
-export const { addTodo, deleteTodo, updateTodo, updateFilterStatus, setCheck } = todoSlice.actions;
+export const { addTodo, deleteTodo, updateTodo, updateFilterStatus} = todoSlice.actions;
 export default todoSlice.reducer;

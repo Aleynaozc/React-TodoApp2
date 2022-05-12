@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import Tab from './Tab';
 import TodoListContainer from './components/TodoList';
 import TodoModal from './components/TodoModal';
@@ -14,6 +14,7 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
+  
   return (
     <>
       <div className="App">
@@ -32,7 +33,7 @@ function App() {
           >
             <FontAwesomeIcon icon={faPenToSquare} />
           </button>
-          <TodoModal type="save" modalOpen={modalOpen} setModalOpen={setModalOpen} />
+          <TodoModal type="save" modalOpen={modalOpen} setModalOpen={setModalOpen}  />
           <Toaster toastOptions={{
             // Define default options
             className: 'toaster-pos',

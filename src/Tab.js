@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./App.css";
+import "./App.scss";
 import { updateFilterStatus } from "./slices/todoSlice";
 
 function Tabs() {
