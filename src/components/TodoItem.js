@@ -37,7 +37,7 @@ function TodoItem({ todo }) {
         <div className="todo-item-details">
           <span className={`todo-item-title ${checked? "completed": ""}`} >{todo.title} </span>
           <span className="todo-item-desc">{todo.description}</span>
-          <p className="todo-item-time"> {format(new Date(todo.time), 'p, MM/dd/yyyy')}</p>
+          <p className="todo-item-time"> {format(new Date(), 'dd/MM/yyyy,p')}</p>
         </div>
         <button className="delete-btn" type="button" onClick={handlerUpdate}>
           <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>

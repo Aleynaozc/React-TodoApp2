@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid'
@@ -52,8 +51,6 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
             toast.error('Please enter a title.')
             return;
         }
-
-
         if (title && status) //If içine Description yazmıyoruz.Çünkü description boş kaydedilebilir.
         {
             if (type === 'save') {
@@ -68,10 +65,10 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
                             time: new Date().toLocaleString(),
                         })
                     );
+            
                 toast.success('Task Added Successfully'); //Alert
                 setModalOpen(false); //save tuşuna bastığında modalı kapatıcak.
             }
-
             if (type === 'update') {
                 if (todo.title !== title || todo.description !== description || todo.status !== status) {
                     dispatch(updateTodo({
@@ -88,7 +85,6 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
             }
             setModalOpen(false);
         }
-
     };
     return (
 
@@ -131,20 +127,17 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         >
-
                         </textarea>
                         <button
                             className="save-btn"
                             type="submit"
                         >
                             {type === 'update' ? 'UPDATE' : 'SAVE'}
-
                         </button>
                     </form>
                 </div>
             </div>
         )
-
     )
 }
 export default TodoModal;
