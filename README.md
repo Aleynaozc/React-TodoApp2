@@ -1,7 +1,7 @@
                                                           #TODOAPP (USING REACT)
                                                           
 
-live demo: https://react-my-todo-app.netlify.app/
+
 
 <img width="1078" alt="1" src="https://user-images.githubusercontent.com/97678679/167652340-2fee4ff3-ba8a-4cb5-a9c2-d3694a0b85fb.png">
 
